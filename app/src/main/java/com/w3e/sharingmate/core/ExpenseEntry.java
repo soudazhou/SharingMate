@@ -1,4 +1,4 @@
-package com.w3e.sharingmate;
+package com.w3e.sharingmate.core;
 
 import java.util.HashMap;
 
