@@ -1,16 +1,18 @@
 package com.w3e.sharingmate.core;
 
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Wenxuan on 2014/11/27.
  */
-public class ExpenseItem {
+public class ExpenseItem implements Comparable<ExpenseItem> {
     private double amount;
-    private ArrayList<String> paidWith;
-    private Calendar dateTime;
-    private String description;
+    private Date date;
+
+    public ExpenseItem(Date date, double amount) {
+        this.date = date;
+        this.amount = amount;
+    }
 
     public double getAmount() {
         return amount;
@@ -20,28 +22,16 @@ public class ExpenseItem {
         this.amount = amount;
     }
 
-    public ArrayList<String> getPaidWith() {
-        return paidWith;
+    public Date getDate() {
+        return date;
     }
 
-    public void setPaidWith(ArrayList<String> paidWith) {
-        this.paidWith = paidWith;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Calendar getDateTime() {
-        return dateTime;
+    @Override
+    public int compareTo(ExpenseItem o) {
+        return getDate().compareTo(o.getDate());
     }
-
-    public void setDateTime(Calendar dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
 }

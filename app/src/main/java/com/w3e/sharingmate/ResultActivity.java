@@ -4,23 +4,21 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
-import com.w3e.sharingmate.core.*;
 
 
-public class MainActivity extends Activity {
+public class ResultActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_result);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_result, menu);
         return true;
     }
 
@@ -39,19 +37,11 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    //called when "addEntry" button is clicked. links to  <android:onClick="addEntry" /> in res/layout/activity_main.xml
-    public void addEntry() {
-//        Intent intent = new Intent(this, DisplayMessageActivity.class);
-//        EditText editText = (EditText) findViewById(R.id.edit_message);
-//        String message = editText.getText().toString();
-//        intent.putExtra(EXTRA_MESSAGE, message);
-        //todo: create a "pop-out diaoglue box to enable users input for entry"
-        //construct ExpenseEntry with the input box contents(personid -> expenseItem), pass it to ResultActivity via intent
-    }
+    //called when "remindMeLater" button is clicked. links to  <android:onClick="addEntry" /> in res/layout/activity_main.xml
+    public void remindMeLater() {
 
-    //called when 'settle' button is clicked.
-    public void onSettle() {
-
+        //todo: find out sample code interacting with google calendar"
 
     }
+
 }
