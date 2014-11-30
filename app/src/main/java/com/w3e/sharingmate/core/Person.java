@@ -3,6 +3,7 @@ package com.w3e.sharingmate.core;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import com.w3e.sharingmate.helper.Gender;
 
 /**
  * Created by Wenxuan on 2014/11/27.
@@ -10,7 +11,7 @@ import java.util.Date;
 public class Person {
     private int id;
     private String name;
-    private boolean isMale;
+    private Gender gender;
     private ArrayList<ExpenseItem> expense;
 
     public int getId() {
@@ -29,12 +30,12 @@ public class Person {
         this.name = name;
     }
 
-    public boolean isMale() {
-        return isMale;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setMale(boolean isMale) {
-        this.isMale = isMale;
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public ArrayList<ExpenseItem> getExpense() {

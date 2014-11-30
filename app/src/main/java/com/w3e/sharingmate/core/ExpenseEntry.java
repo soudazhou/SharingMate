@@ -11,7 +11,6 @@ import java.util.LinkedHashMap;
 public class ExpenseEntry {
     private Date entryDate;
     private LinkedHashMap<Integer,Double> personIdToAmount;
-    private double totalSharedExpense;
 
     public Date getEntryDate() {
         return entryDate;
@@ -29,14 +28,6 @@ public class ExpenseEntry {
         this.personIdToAmount = personIdToAmount;
     }
 
-    public double getTotalSharedExpense() {
-        return totalSharedExpense;
-    }
-
-    public void setTotalSharedExpense(double totalSharedExpense) {
-        this.totalSharedExpense = totalSharedExpense;
-    }
-
     //todo: discuss whether "totalsharedexpense" input from user is needed, if so need to check before submit entry
     //validate the entry before send
     public double getSumofIndividualPaid() {
@@ -50,15 +41,6 @@ public class ExpenseEntry {
         return sum;
     }
 
-    public void checkTotalSharedExpenseSumofIndividualPaid() {
-        if(totalSharedExpense != getSumofIndividualPaid())
-        {
-            //print out error message, asking for re-enter input
-        }
-
-    }
-
 //create Entry when the button is pressed
-
-    //the intent would contain map<personId, ExpenseItem>
+//the intent would contain map<personId, ExpenseItem>
 }
