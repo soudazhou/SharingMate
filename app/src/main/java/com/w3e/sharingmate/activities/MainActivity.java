@@ -1,10 +1,12 @@
-package com.w3e.sharingmate;
+package com.w3e.sharingmate.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+
+import com.w3e.sharingmate.R;
 import com.w3e.sharingmate.core.*;
 
 

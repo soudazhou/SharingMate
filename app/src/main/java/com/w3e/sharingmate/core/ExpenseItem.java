@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by Wenxuan on 2014/11/27.
  */
 public class ExpenseItem implements Comparable<ExpenseItem> {
-    private double amount;
+    private double amount = 0;
     private Date date;
 
     public ExpenseItem(Date date, double amount) {

@@ -17,6 +17,10 @@ public class Flat {
         return roommates;
     }
 
+    public void setRoommates(ArrayList<Person> roommates) {
+        this.roommates = roommates;
+    }
+
     private Map<Integer, String> generatePersonidToName() {
         Map<Integer, String> personidToName = new HashMap<Integer, String>();
         for(Person p : roommates) {
@@ -61,8 +65,8 @@ public class Flat {
                 breakpoint = i;
                 break;
             }
-        ArrayList<Pair> pos = new ArrayList<Pair>(personidAndbalance.subList(0 , breakpoint - 1));
-        ArrayList<Pair> neg = new ArrayList<Pair>(personidAndbalance.subList(breakpoint , personidAndbalance.size() - 1));
+        ArrayList<Pair> pos = new ArrayList<Pair>(personidAndbalance.subList(0 , breakpoint));
+        ArrayList<Pair> neg = new ArrayList<Pair>(personidAndbalance.subList(breakpoint , personidAndbalance.size()));
         ArrayList<Pair> posUpdated = (ArrayList<Pair>) pos.clone();
         ArrayList<Pair> negUpdated = (ArrayList<Pair>) neg.clone();
         Collections.reverse(neg);
@@ -78,12 +82,12 @@ public class Flat {
                 Pair negUpdateditemNegRemain = new Pair(neg.get(j).index, posUpdated.get(i).value + negUpdated.get(j).value);
 
                 if(pos.get(i).value + neg.get(j).value > 0) {
-                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + "  " + underPaidAmount);
+                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + " " + underPaidAmount);
                     posUpdated.set(i, posUpdateditemPosRemain);
                     negUpdated.set(j, negUpdateditemPosRemain);
                 }
                 else {
-                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + "  " + -1 * overPaidAmount);
+                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + " " + -1 * overPaidAmount);
                     posUpdated.set(i, posUpdateditemNegRemain);
                     negUpdated.set(j, negUpdateditemNegRemain);
                     break;//move pointer in pos to the next position
@@ -92,58 +96,4 @@ public class Flat {
         }
         return settlementRecord.toString();
     }
-
-/*
-    public ArrayList<Pair> generatePidBalancePair(Date start, Date end) {
-        ArrayList<Pair> pidBalancePair = new ArrayList<Pair>();
-        double totalSharedExpense = getTotalSharedExpenseWithinPeriod(start, end);
-        double averageExpense = totalSharedExpense / roommates.size();
-        for(Person p : roommates) {
-            pidBalancePair.add(new Pair(p.getId(),p.getTotalExpenseWithinPeriod(start, end) - averageExpense));
-        }
-        return pidBalancePair;
-    }
-
-    public String generateSettlementInstruction(ArrayList<Pair> personidAndbalance) {
-        int breakpoint = 0;
-        StringBuilder settlementRecord = new StringBuilder("<<<<Settlement Instruction<<<<\n");
-        generatePersonidToName();
-        Collections.sort(personidAndbalance);
-        for(int i = 0; i < personidAndbalance.size(); i++)
-            if (personidAndbalance.get(i).value < 0) {
-                breakpoint = i;
-                break;
-            }
-        ArrayList<Pair> pos = new ArrayList<Pair>(personidAndbalance.subList(0 , breakpoint - 1));
-        ArrayList<Pair> neg = new ArrayList<Pair>(personidAndbalance.subList(breakpoint , personidAndbalance.size() - 1));
-        ArrayList<Pair> posUpdated = (ArrayList<Pair>) pos.clone();
-        ArrayList<Pair> negUpdated = (ArrayList<Pair>) neg.clone();
-        Collections.reverse(neg);
-        for(int i = 0; i < pos.size(); i++) {
-            for(int j = 0; j < neg.size(); j++) {
-                String overPaidPersonName = personidToName.get(pos.get(i).index);
-                String underPaidPersonName = personidToName.get(neg.get(j).index);
-                double overPaidAmount = pos.get(i).value;
-                double underPaidAmount = -1 * neg.get(j).value;
-                Pair posUpdateditemPosRemain = new Pair(pos.get(i).index, posUpdated.get(i).value + negUpdated.get(j).value);
-                Pair negUpdateditemPosRemain = new Pair(neg.get(j).index, 0);
-                Pair posUpdateditemNegRemain = new Pair(pos.get(i).index, 0);
-                Pair negUpdateditemNegRemain = new Pair(neg.get(j).index, posUpdated.get(i).value + negUpdated.get(j).value);
-
-                if(pos.get(i).value + neg.get(j).value > 0) {
-                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + "  " + underPaidAmount);
-                    posUpdated.set(i, posUpdateditemPosRemain);
-                    negUpdated.set(j, negUpdateditemPosRemain);
-                }
-                else {
-                    settlementRecord.append("\n" + underPaidPersonName + " should pay " + overPaidPersonName + "  " + -1 * overPaidAmount);
-                    posUpdated.set(i, posUpdateditemNegRemain);
-                    negUpdated.set(j, negUpdateditemNegRemain);
-                    break;//move pointer in pos to the next position
-                }
-            }
-        }
-        return settlementRecord.toString();
-    }*/
-
 }

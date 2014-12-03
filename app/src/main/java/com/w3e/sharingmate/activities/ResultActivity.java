@@ -1,9 +1,11 @@
-package com.w3e.sharingmate;
+package com.w3e.sharingmate.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.w3e.sharingmate.R;
 
 
 public class ResultActivity extends Activity {
