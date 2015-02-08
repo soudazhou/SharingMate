@@ -10,11 +10,11 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
-        testPackageName "com.w3e.sharingmate.tests"
+        testApplicationId "com.w3e.sharingmate.tests"
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
