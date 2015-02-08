@@ -1,9 +1,13 @@
-package com.w3e.sharingmate;
+package com.w3e.sharingmate.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+
+import com.w3e.sharingmate.R;
+import com.w3e.sharingmate.core.*;
 
 
 public class MainActivity extends Activity {
@@ -35,5 +39,21 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    //called when "addEntry" button is clicked. links to  <android:onClick="addEntry" /> in res/layout/activity_main.xml
+    public void addEntry() {
+//        Intent intent = new Intent(this, DisplayMessageActivity.class);
+//        EditText editText = (EditText) findViewById(R.id.edit_message);
+//        String message = editText.getText().toString();
+//        intent.putExtra(EXTRA_MESSAGE, message);
+        //todo: create a "pop-out diaoglue box to enable users input for entry"
+        //construct ExpenseEntry with the input box contents(personid -> expenseItem), pass it to ResultActivity via intent
+    }
+
+    //called when 'settle' button is clicked.
+    public void onSettle() {
+
+
     }
 }

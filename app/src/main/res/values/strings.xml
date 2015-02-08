@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">SharingMate</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="hello_william">Hello William!</string>
+    <string name="hello_world">Hello world 123!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="date_input_text">Select expense period:</string>
+    <string name="amount_paid">Amount Paid</string>
+    <string name="roommate_name1">Eddie</string>
+    <string name="roommate_name2">William</string>
+    <string name="roommate_name3">Wen</string>
+    <string name="add_entry_text">Add Entry</string>
+    <string name="generate_settlement_text">Settle</string>
+    <string name="EnterIndividualPay">Please enter names and amount that each person paid: </string>
+    <string name="Paid">Paid</string>
+    <string name="EnterName">Enter name</string>
+    <string name="EnterAmount">Enter amount</string>
+    <string name="action_search">Search</string>
 </resources>
