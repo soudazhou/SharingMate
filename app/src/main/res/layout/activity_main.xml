@@ -9,7 +9,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dip" >
-
         <TextView
             android:layout_span="3"
             android:text="@string/EnterIndividualPay" />
@@ -23,14 +22,14 @@
 
         <EditText
             android:id="@+id/textViewName1"
-            android:text="@string/EnterName"
+            android:hint="@string/EnterName"
             android:layout_weight="1"/>
         <TextView
             android:text="@string/Paid"
             android:padding="10dip"/>
         <EditText
             android:id="@+id/textAmount1"
-            android:text="@string/EnterAmount"
+            android:hint="@string/EnterAmount"
             android:layout_weight="1"/>
     </TableRow>
 
@@ -42,14 +41,14 @@
 
         <EditText
             android:id="@+id/textViewName2"
-            android:text="@string/EnterName"
+            android:hint="@string/EnterName"
             android:layout_weight="1"/>
         <TextView
             android:text="@string/Paid"
             android:padding="10dip"/>
         <EditText
             android:id="@+id/textAmount2"
-            android:text="@string/EnterAmount"
+            android:hint="@string/EnterAmount"
             android:layout_weight="1"/>
     </TableRow>
 
@@ -61,14 +60,14 @@
 
         <EditText
             android:id="@+id/textViewName3"
-            android:text="@string/EnterName"
+            android:hint="@string/EnterName"
             android:layout_weight="1"/>
         <TextView
             android:text="@string/Paid"
             android:padding="10dip"/>
         <EditText
             android:id="@+id/textAmount3"
-            android:text="@string/EnterAmount"
+            android:hint="@string/EnterAmount"
             android:layout_weight="1"/>
     </TableRow>
 
@@ -81,7 +80,8 @@
         <Button
             android:id="@+id/Settle"
             android:layout_column="3"
-            android:text="@string/generate_settlement_text" />
+            android:text="@string/generate_settlement_text"
+            android:onClick="onSettle" />
     </TableRow>
 
     </TableLayout>

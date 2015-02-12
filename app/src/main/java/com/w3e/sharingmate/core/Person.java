@@ -1,18 +1,30 @@
 package com.w3e.sharingmate.core;
 
+import com.w3e.sharingmate.helper.Gender;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import com.w3e.sharingmate.helper.Gender;
+
 
 /**
  * Created by Wenxuan on 2014/11/27.
  */
-public class Person {
+public class Person implements Serializable {
     private int id;
     private String name;
     private Gender gender;
     private ArrayList<ExpenseItem> expense;
+
+    public Person() {
+    }
+
+    public Person(int id, String name, ArrayList<ExpenseItem> expense) {
+        this.id = id;
+        this.name = name;
+        this.expense = expense;
+    }
 
     public int getId() {
         return id;
