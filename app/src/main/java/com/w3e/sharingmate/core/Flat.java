@@ -1,17 +1,18 @@
 package com.w3e.sharingmate.core;
 
+import com.w3e.sharingmate.helper.Pair;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.w3e.sharingmate.helper.Pair;
-
 /**
  * Created by Wenxuan on 2014/11/27.
  */
-public class Flat {
+public class Flat implements Serializable {
     private ArrayList<Person> roommates;
     public ArrayList<Person> getRoommates() {
         return roommates;

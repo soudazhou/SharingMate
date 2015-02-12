@@ -17,12 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.ResultActivity"
+            android:name=".activities.SettlementInstructionActivity"
             android:label="@string/title_activity_result"
             android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.w3e.sharingmate.MainActivity" />
+                android:value="com.w3e.sharingmate.activities.MainActivity" />
         </activity>
     </application>
 
